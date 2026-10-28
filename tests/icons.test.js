@@ -16,7 +16,7 @@ test('portfolio prerenders Font Awesome SVG icons instead of emoji glyphs', asyn
       createElement(App, { staticProjects: createElement(Projects) }),
     )
     assert.doesNotMatch(html, /[↗↓✳⌖↴×▧●]/u)
-    for (const name of ['arrow-up-right-from-square', 'asterisk', 'github', 'instagram', 'location-dot']) {
+    for (const name of ['arrow-up-right-from-square', 'asterisk', 'github', 'instagram', 'location-dot', 'php', 'laravel', 'react']) {
       assert.ok(html.includes(`data-icon="${name}"`), `Missing icon: ${name}`)
     }
     const icons = html.match(/<svg\b[^>]*>[\s\S]*?<\/svg>/g) ?? []
@@ -31,6 +31,9 @@ test('portfolio prerenders Font Awesome SVG icons instead of emoji glyphs', asyn
     assert.equal((html.match(/aria-label="Lihat gambar /g) ?? []).length, 3)
     assert.equal((html.match(/<dialog\b/g) ?? []).length, 2)
     assert.ok(html.includes('Gambar proyek'))
+    assert.equal((html.match(/class="tech-php"/g) ?? []).length, 2)
+    assert.equal((html.match(/class="tech-laravel"/g) ?? []).length, 1)
+    assert.equal((html.match(/class="tech-react"/g) ?? []).length, 1)
   } finally {
     await vite.close()
   }

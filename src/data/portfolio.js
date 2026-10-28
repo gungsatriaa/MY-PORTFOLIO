@@ -130,6 +130,7 @@ export const categories = ['Semua', 'Website']
 export const projects = [
   {
     id: 'eskul-stikmas',
+    techStack: [{ label: 'PHP Native', icon: 'php' }],
     image: '/images/eskul.webp',
     imageAlt: 'Website ekstrakurikuler SMKN 1 Mas Ubud',
     title: 'Website SMKN 1 Mas Ubud',
@@ -142,6 +143,7 @@ export const projects = [
   },
   {
     id: 'hotelinaja',
+    techStack: [{ label: 'PHP Native', icon: 'php' }],
     image: '/images/hotelin.webp',
     imageAlt: 'Solusi digital untuk Hotel Jaman Sekarang',
     title: 'HotelinAja',
@@ -154,6 +156,10 @@ export const projects = [
   },
   {
     id: 'artaswaha',
+    techStack: [
+      { label: 'Laravel', icon: 'laravel' },
+      { label: 'React.js', icon: 'react' },
+    ],
     image: '/images/artaswaha.webp',
     imageAlt: 'Platform edukasi Budaya Bali',
     title: 'ARTASWAHA',

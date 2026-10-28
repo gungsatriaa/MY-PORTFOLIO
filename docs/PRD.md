@@ -316,3 +316,6 @@ Ikon UI menggunakan Font Awesome SVG melalui komponen Icon, dengan impor ikon in
 
 
 Galeri proyek terbaru: foto memenuhi area kartu berasio 2:1, tanpa padding latar, object-fit cover dengan posisi center top. Tombol Lihat gambar menggunakan ikon Font Awesome dan membuka komponen Modal bersama; gambar di dalam modal memakai contain agar tidak terpotong. Preview baru dimuat ketika modal dibuka. Keyboard, Escape, backdrop, dan scroll lock mengikuti komponen Modal yang sudah ada. Data pemilik diperbarui menjadi tiga proyek Website: ekstrakurikuler SMKN 1 Mas Ubud, HotelinAja, dan ARTASWAHA; filter AI dihapus karena tidak ada proyek dalam kategori itu.
+
+
+Tech stack proyek: Eskul dan HotelinAja menampilkan badge PHP Native; ARTASWAHA menampilkan Laravel dan React.js. Badge memakai logo Font Awesome Brands yang diimpor individual, label teks, border hitam, shadow 2px, serta warna lembut per teknologi. Badge berada di bawah judul dan membungkus baris pada layar kecil. Kartu memakai layout flex agar tombol aksi sejajar di bagian bawah, sementara tombol Lihat gambar dan modal dipertahankan. Tidak menambah dependency.

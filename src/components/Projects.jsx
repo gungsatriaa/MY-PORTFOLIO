@@ -48,6 +48,18 @@ export default function Projects() {
             )}
             <div className="project-copy">
               <h3>{project.title}</h3>
+              <ul
+                className="project-tech-stack"
+                aria-label={`Tech stack ${project.title}`}
+                role="list"
+              >
+                {project.techStack.map((technology) => (
+                  <li className={`tech-${technology.icon}`} key={technology.icon}>
+                    <Icon name={technology.icon} />
+                    {technology.label}
+                  </li>
+                ))}
+              </ul>
               <p>{project.description}</p>
               {(project.image || project.website || project.github) && (
                 <div className="project-actions">

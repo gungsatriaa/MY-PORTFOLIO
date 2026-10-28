@@ -13,7 +13,13 @@ import {
   faLocationDot,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import {
+  faGithub,
+  faInstagram,
+  faPhp,
+  faLaravel,
+  faReact,
+} from '@fortawesome/free-brands-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 // Bundle CSS locally so prerender and the browser use the same icon dimensions.
@@ -33,6 +39,9 @@ const icons = {
   close: faXmark,
   github: faGithub,
   instagram: faInstagram,
+  php: faPhp,
+  laravel: faLaravel,
+  react: faReact,
 }
 
 export default function Icon({ name, className = '' }) {
