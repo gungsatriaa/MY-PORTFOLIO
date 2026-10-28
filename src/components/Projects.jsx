@@ -3,9 +3,11 @@ import { useState } from 'react'
 import { categories, filterProjects } from '../data/portfolio'
 import LazyImage from './LazyImage'
 import Reveal from './Reveal'
+import Modal from './Modal'
 
 export default function Projects() {
   const [category, setCategory] = useState('Semua')
+  const [preview, setPreview] = useState(null)
   const visibleProjects = filterProjects(category)
 
   return (
@@ -47,8 +49,20 @@ export default function Projects() {
             <div className="project-copy">
               <h3>{project.title}</h3>
               <p>{project.description}</p>
-              {(project.website || project.github) && (
+              {(project.image || project.website || project.github) && (
                 <div className="project-actions">
+                  {project.image && (
+                    <button
+                      type="button"
+                      className="button project-link"
+                      aria-haspopup="dialog"
+                      aria-label={`Lihat gambar ${project.title}`}
+                      onClick={() => setPreview(project)}
+                    >
+                      <Icon name="image" />
+                      Lihat gambar
+                    </button>
+                  )}
                   {project.website && (
                     <a
                       className="button button-yellow project-link"
@@ -84,6 +98,19 @@ export default function Projects() {
           </Reveal>
         ))}
       </div>
+      <Modal
+        open={preview !== null}
+        onClose={() => setPreview(null)}
+        title={preview?.title ?? 'Gambar proyek'}
+      >
+        {preview && (
+          <LazyImage
+            key={preview.image}
+            src={preview.image}
+            alt={preview.imageAlt}
+          />
+        )}
+      </Modal>
     </>
   )
 }

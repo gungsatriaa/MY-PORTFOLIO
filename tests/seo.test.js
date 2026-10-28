@@ -48,11 +48,19 @@ test('metadata uses absolute production links, and preview builds are noindex', 
   )
   assert.equal(
     tags.find((tag) => tag.attrs?.property === 'og:image').attrs.content,
-    'https://portfolio.test/og-image.png',
+    'https://portfolio.test/og-image-hero.jpg',
   )
   assert.equal(
     tags.find((tag) => tag.attrs?.name === 'robots').attrs.content,
     'noindex,follow',
+  )
+  assert.equal(
+    tags.find((tag) => tag.attrs?.property === 'og:image:type').attrs.content,
+    'image/jpeg',
+  )
+  assert.equal(
+    tags.find((tag) => tag.attrs?.name === 'twitter:image').attrs.content,
+    'https://portfolio.test/og-image-hero.jpg',
   )
   const local = seoTags(null)
   assert.ok(!local.some((tag) => tag.attrs?.rel === 'canonical'))

@@ -19,7 +19,7 @@ CTA utama: Lihat proyek → Diskusikan kebutuhan → Diskusi via LinkedIn. Insta
 - Metadata terpusat di `scripts/seo.mjs`, dipasang melalui hook HTML Vite untuk development dan build.
 - Satu h1, heading bagian yang deskriptif, landmark, bahasa halaman Indonesia, dan alt gambar yang sesuai.
 - JSON-LD ProfilePage dengan Person, nama lengkap/nama tampilan, lokasi umum, fokus, serta tautan LinkedIn/Instagram dari pemilik. Tidak ada rating, testimoni, foto orang rekaan, atau credential URL palsu.
-- Open Graph dan Twitter card; gambar PNG lokal 1200×630 di `/og-image.png`.
+- Open Graph dan Twitter card; gambar JPEG lokal 1200×630 di `/og-image-hero.jpg`.
 - Prerender dengan React DOM server dan Vite yang sudah terpasang. Raw HTML produksi mencakup profil dan seluruh kartu; tidak ada dependency atau layanan baru.
 - Galeri tetap memakai lazy/Suspense, tetapi chunk dimuat saat render, bukan setelah scroll. Gambar tetap lazy-loaded. Halaman tidak meminta crawler berinteraksi agar menemukan proyek.
 - Render browser tetap memakai createRoot dan membangun interaksi dari data yang sama; ini prerender statis dengan client rendering, bukan server runtime atau hydration framework.
@@ -47,7 +47,7 @@ Belum dilakukan: verifikasi deployment VPS aaPanel, Rich Results Test pada URL p
 
 1. Pastikan website publik mengembalikan HTTP 200, HTTPS aktif, dan tidak tertahan autentikasi atau noindex produksi.
 2. Buka view-source: periksa title, description, canonical, JSON-LD, dan teks proyek. Canonical harus menunjuk satu URL utama.
-3. Periksa `/robots.txt`, `/sitemap.xml`, dan `/og-image.png`. Preview kartu sosial memakai URL absolut yang dapat diakses publik.
+3. Periksa `/robots.txt`, `/sitemap.xml`, dan `/og-image-hero.jpg`. Preview kartu sosial memakai URL absolut yang dapat diakses publik.
 4. Verifikasi domain di Google Search Console, kirim sitemap, lalu gunakan URL Inspection untuk memeriksa halaman hasil render dan meminta pengindeksan bila perlu.
 5. Uji structured data dan preview berbagi. Hapus klaim/field yang tidak sesuai dengan konten yang terlihat, bukan menambahkan informasi palsu untuk mengejar hasil kaya.
 6. Jalankan Lighthouse mobile pada deployment produksi dan periksa pengalaman pengguna nyata. Perubahan SEO tidak menggantikan konten yang bermanfaat dan performa yang baik.

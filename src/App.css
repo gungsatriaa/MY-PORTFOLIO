@@ -385,8 +385,16 @@ h2 {
   box-shadow: var(--shadow);
 }
 .project-art {
-  padding: 24px;
+  overflow: hidden;
   border-bottom: var(--line);
+}
+.project-art .image-frame {
+  aspect-ratio: 2 / 1;
+}
+.project-art .image-frame img {
+  display: block;
+  object-fit: cover;
+  object-position: center top;
 }
 .bg-blue {
   background: #a4b5ff;
@@ -907,10 +915,6 @@ details p {
 }
 
 @media (min-width: 761px) {
-  .project-art .image-frame {
-    height: clamp(160px, 20svh, 220px);
-    aspect-ratio: auto;
-  }
   .work-heading h2 {
     font-size: clamp(38px, 6svh, 54px);
   }

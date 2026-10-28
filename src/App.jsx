@@ -247,8 +247,8 @@ function App({ staticProjects = null }) {
             </Reveal>
             {staticProjects ?? <ProjectGallery />}
             <p className="work-footnote">
-              Gambar merupakan ilustrasi. Tautan website dan repositori tersedia
-              pada proyek yang sudah dilengkapi.
+              Lihat gambar untuk memperbesar tampilan proyek. Tautan website dan
+              repositori tersedia pada proyek yang sudah dilengkapi.
             </p>
           </div>
         </section>

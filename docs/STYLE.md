@@ -264,3 +264,6 @@ Variasi animasi judul: efek teks bertahap dibatasi ke Tentang. Proyek bergeser h
 
 
 Ikon UI menggunakan Font Awesome SVG melalui komponen Icon, dengan impor ikon individual dan CSS lokal. Panah, menu/tutup, lokasi, running text, dekorasi asterisk, preview dokumen, GitHub, dan Instagram tidak lagi menggunakan glyph Unicode/emoji atau SVG manual. Semua ikon dekoratif aria-hidden dan focusable=false; label teks tombol tetap tersedia. Tidak ada CDN atau font ikon eksternal. Simbol copyright dan tanda baca tetap berupa teks. Tes prerender memastikan SVG tersedia dan glyph lama tidak tersisa.
+
+
+Galeri proyek terbaru: foto memenuhi area kartu berasio 2:1, tanpa padding latar, object-fit cover dengan posisi center top. Tombol Lihat gambar menggunakan ikon Font Awesome dan membuka komponen Modal bersama; gambar di dalam modal memakai contain agar tidak terpotong. Preview baru dimuat ketika modal dibuka. Keyboard, Escape, backdrop, dan scroll lock mengikuti komponen Modal yang sudah ada. Data pemilik diperbarui menjadi tiga proyek Website: ekstrakurikuler SMKN 1 Mas Ubud, HotelinAja, dan ARTASWAHA; filter AI dihapus karena tidak ada proyek dalam kategori itu.

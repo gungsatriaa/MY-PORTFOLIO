@@ -124,45 +124,45 @@ export const certifications = [
   },
 ]
 
-export const categories = ['Semua', 'Website', 'AI']
+export const categories = ['Semua', 'Website']
 
 // Isi website/github dengan URL asli jika tersedia; null menyembunyikan tombol.
 export const projects = [
   {
-    id: 'school-website',
-    image: '/images/personal-space.svg',
-    imageAlt: 'Ilustrasi website sekolah',
+    id: 'eskul-stikmas',
+    image: '/images/eskul.webp',
+    imageAlt: 'Website ekstrakurikuler SMKN 1 Mas Ubud',
     title: 'Website SMKN 1 Mas Ubud',
     category: 'Website',
     description:
-      'Mengembangkan website SMK Negeri 1 Mas Ubud dengan mengelola proses dari analisis kebutuhan dan perencanaan hingga implementasi.',
-    website: 'https://smkn1masubud.sch.id',
-    github: 'https://github.com/gungsatriaaa0/smk-negeri-1-mas-ubud',
+      'Platform pendaftaran ekstrakurikuler berbasis website yang dikembangkan untuk memudahkan siswa mendaftar kegiatan secara online serta membantu guru mengelola data peserta dengan lebih praktis dan efisien.',
+    website: null,
+    github: 'https://github.com/gungsatriaa/WEBSITE-EKSTRAKULIKULER',
     background: 'blue',
   },
   {
-    id: 'digisite',
-    image: '/images/studio-notes.svg',
-    imageAlt: 'Ilustrasi solusi digital Digisite',
-    title: 'Digisite Kreatif Indonesia',
+    id: 'hotelinaja',
+    image: '/images/hotelin.webp',
+    imageAlt: 'Solusi digital untuk Hotel Jaman Sekarang',
+    title: 'HotelinAja',
     category: 'Website',
     description:
-      'Perusahaan solusi digital yang saya dirikan dan pimpin, dengan fokus pada pengembangan website dan perangkat lunak di Ubud, Bali.',
+      'Website pemesanan hotel yang dikembangkan sebagai project sekolah di jurusan Rekayasa Perangkat Lunak. Menghadirkan solusi reservasi hotel secara online dengan sistem pembayaran digital yang terintegrasi melalui payment gateway Xendit.',
     website: null,
-    github: null,
-    background: 'yellow',
+    github: 'https://github.com/gungsatriaa/HotelinAja',
+    background: 'pink',
   },
   {
-    id: 'ai-competition',
-    image: '/images/playground.svg',
-    imageAlt: 'Ilustrasi kegiatan kompetisi AI',
-    title: 'AI Application Competition OSII Week 2025',
-    category: 'AI',
+    id: 'artaswaha',
+    image: '/images/artaswaha.webp',
+    imageAlt: 'Platform edukasi Budaya Bali',
+    title: 'ARTASWAHA',
+    category: 'Website',
     description:
-      'Meraih juara 1 AI Application Competition OSII Week 2025 yang diselenggarakan Universitas Katolik Darma Cendika pada November 2025.',
-    website: null,
-    github: null,
-    background: 'pink',
+      'Platform edukasi interaktif yang dikembangkan untuk kompetisi bertema pendidikan dan budaya Bali. Bertujuan membantu generasi muda mempelajari Aksara Bali dan Paribasa Bali melalui materi, latihan, dan kuis yang menyenangkan sekaligus melestarikan budaya lokal.',
+    website: 'https://artaswaha.kerthajaya.com/',
+    github: 'https://github.com/gungsatriaa/ARTASWAHA',
+    background: 'yellow',
   },
 ]
 

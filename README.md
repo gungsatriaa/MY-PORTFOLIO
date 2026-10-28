@@ -136,7 +136,7 @@ Copy ditujukan untuk calon klien dan perekrut: fokus web development serta otoma
 
 `npm run build` menjalankan Vite lalu `scripts/prerender.mjs`. Output `dist/index.html` berisi profil dan tiga proyek, bukan hanya root kosong. React mengambil alih interaksi melalui createRoot di browser; tidak ada server runtime baru. Galeri tetap code-split, tetapi mulai dimuat tanpa menunggu scroll. Gambar tetap lazy-loaded. Perubahan data perlu build ulang sebelum deploy.
 
-Metadata terpusat di `scripts/seo.mjs`: title/description, author, Open Graph, Twitter card, robots, dan JSON-LD ProfilePage/Person. Gambar berbagi tersedia di `public/og-image.png` (1200×630). Root HTML memakai lang=id dan satu h1.
+Metadata terpusat di `scripts/seo.mjs`: title/description, author, Open Graph, Twitter card, robots, dan JSON-LD ProfilePage/Person. Gambar berbagi tersedia di `public/og-image-hero.jpg` (1200×630). Root HTML memakai lang=id dan satu h1.
 
 Untuk Vercel: gunakan Build Command `npm run build` dan Output Directory `dist`. URL utama dibaca dari `SITE_URL`, lalu fallback `VERCEL_PROJECT_PRODUCTION_URL`. Aktifkan akses system environment variables pada proyek Vercel jika memakai fallback. Jangan menggunakan URL deployment acak sebagai canonical. File `.env.example` memberi contoh nama variabel. Domain belum ditentukan sehingga build lokal tidak membuat canonical/URL share absolut/sitemap rekaan.
 
@@ -199,7 +199,7 @@ cd /www/projects/my-portfolio
 
 Script menjalankan `git pull --ff-only origin main`, `npm ci --include=dev`, lint, tes, dan build. Hasilnya langsung dilayani dari document root `dist`; tidak ada upload ke Vercel atau restart proses Node. Script hanya menerima branch `main` dan working tree bersih. Script tidak membuat commit/push/stash dan tidak menghapus perubahan source lokal.
 
-Setelah deploy, cek `https://gungsatria.com`, `/robots.txt`, `/sitemap.xml`, dan `/og-image.png`. Navigasi portfolio tetap di satu halaman, sehingga tidak membutuhkan rewrite React Router. File environment berada di folder source, bukan folder publik `dist`.
+Setelah deploy, cek `https://gungsatria.com`, `/robots.txt`, `/sitemap.xml`, dan `/og-image-hero.jpg`. Navigasi portfolio tetap di satu halaman, sehingga tidak membutuhkan rewrite React Router. File environment berada di folder source, bukan folder publik `dist`.
 
 Validasi lokal: sintaks Bash, 11 tes, lint, build, canonical/social image/sitemap untuk gungsatria.com lolos. DNS, SSL, permission web server, dan konfigurasi aaPanel belum diperiksa di VPS.
 

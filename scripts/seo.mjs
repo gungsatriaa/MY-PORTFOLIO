@@ -81,7 +81,7 @@ export function seoTags(siteUrl, preview = false) {
     },
   ]
   if (siteUrl) {
-    const image = new URL('og-image.png', siteUrl).href
+    const image = new URL('og-image-hero.jpg', siteUrl).href
     tags.push(
       {
         tag: 'link',
@@ -92,7 +92,7 @@ export function seoTags(siteUrl, preview = false) {
       meta('og:image', image, true),
       meta('og:image:width', '1200', true),
       meta('og:image:height', '630', true),
-      meta('og:image:type', 'image/png', true),
+      meta('og:image:type', 'image/jpeg', true),
       meta(
         'og:image:alt',
         'Gung Satria — Web Developer dan Software Developer di Bali',

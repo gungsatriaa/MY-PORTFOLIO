@@ -28,6 +28,9 @@ test('portfolio prerenders Font Awesome SVG icons instead of emoji glyphs', asyn
     }
     assert.ok(html.includes('Lihat website'))
     assert.ok(html.includes('Tutup modal'))
+    assert.equal((html.match(/aria-label="Lihat gambar /g) ?? []).length, 3)
+    assert.equal((html.match(/<dialog\b/g) ?? []).length, 2)
+    assert.ok(html.includes('Gambar proyek'))
   } finally {
     await vite.close()
   }

@@ -1,0 +1,9 @@
+# OG image hero
+
+Asset aktif: `public/og-image-hero.jpg`, 1200×630, JPEG, sekitar 206 KB. Metadata Open Graph dan Twitter memakai URL absolut domain produksi. Nama file baru membedakan gambar ini dari versi sebelumnya yang mungkin masih tercache. Asset lama `public/og-image.png` sudah dihapus; gambar aktif hanya versi baru.
+
+Dibuat menggunakan built-in imagegen dengan referensi `src/assets/gungsatria.webp`. Foto sumber tidak diubah. Output generasi disesuaikan ke ukuran OG dan dikompresi menjadi JPEG. Gambar hasil generasi adalah komposisi marketing; hero website tetap memakai foto sumber.
+
+Prompt desain:
+
+> Create a finished Open Graph social preview image for the personal portfolio gungsatria.com, landscape 1200 x 630. Use the attached real portrait as the photographic subject. Preserve facial identity, hairstyle, white shirt, crossed arms, realistic skin, and original pose. Crop at upper torso so no belt or trousers are visible. Match the established neubrutalist hero: off-white #f9f9f6, ink #161616 thick borders and hard offset shadows, royal blue #2449ec fine square grid, bright yellow #fbe75c circle behind the portrait, small pink #f5b9d4 accent. Left approximately 55%: yellow name badge “GUNG SATRIA”, large “Web Developer.” then “Software Developer.”, supporting “PHP, Laravel & Flutter”, domain “gungsatria.com”. Right approximately 45%: subtly clockwise tilted browser-window portrait card with ellipsis, blue grid, yellow circle, upper-torso portrait; code and browser icon stickers plus asterisk, monochrome SVG-like icons, never emoji; white caption “Gung Satria”. Keep essential content within safe margins. Face, name, and role dominate. Accurate text. No extra text or watermark. Flat finished graphic, no gradients, blurry shadows, rounded corporate cards, 3D, or browser-page screenshot.
