@@ -166,9 +166,6 @@ function App({ staticProjects = null }) {
               <br />
               <strong>ke implementasi.</strong>
             </span>
-            <span className="art-cross" aria-hidden="true">
-              <Icon name="plus" />
-            </span>
           </div>
           <div className="hero-bottom">
             <span>Web & software development / Ubud, Bali</span>

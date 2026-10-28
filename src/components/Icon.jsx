@@ -11,7 +11,6 @@ import {
   faEllipsis,
   faImage,
   faLocationDot,
-  faPlus,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons'
@@ -31,7 +30,6 @@ const icons = {
   ellipsis: faEllipsis,
   image: faImage,
   location: faLocationDot,
-  plus: faPlus,
   close: faXmark,
   github: faGithub,
   instagram: faInstagram,

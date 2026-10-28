@@ -265,13 +265,6 @@ h1 {
   transform: rotate(-8deg);
   font-size: 18px;
 }
-.art-cross {
-  position: absolute;
-  font-size: 80px;
-  left: -8px;
-  bottom: 0;
-  font-weight: 300;
-}
 .hero-bottom {
   grid-column: 1 / -1;
   display: flex;
@@ -978,9 +971,6 @@ details p {
   .hero-art .art-star {
     font-size: 36px;
   }
-  .hero-art .art-cross {
-    font-size: 40px;
-  }
   .hero-bottom span {
     max-width: 26ch;
   }
@@ -1287,11 +1277,6 @@ details p {
 }
 .about-facts .icon {
   margin-right: 6px;
-}
-.art-cross .icon {
-  display: block;
-  width: 0.6em;
-  height: 0.6em;
 }
 .card-bar .icon {
   font-size: 16px;
