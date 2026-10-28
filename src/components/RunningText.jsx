@@ -1,3 +1,4 @@
+import Icon from './Icon'
 const phrases = ['Web development', 'Software development', 'Laravel & Flutter']
 
 export default function RunningText() {
@@ -9,7 +10,7 @@ export default function RunningText() {
             {phrases.map((phrase) => (
               <span key={phrase}>
                 {phrase}
-                <b>✳</b>
+                <b><Icon name="asterisk" /></b>
               </span>
             ))}
           </div>

@@ -856,6 +856,16 @@ details p {
 }
 .certifications summary {
   font-size: 15px;
+  list-style: none;
+}
+.certifications summary::-webkit-details-marker {
+  display: none;
+}
+.certifications summary .icon {
+  transition: transform 180ms ease;
+}
+.certifications[open] summary .icon {
+  transform: rotate(180deg);
 }
 .certifications ul {
   padding: 0;
@@ -1021,7 +1031,6 @@ details p {
   color: var(--blue);
   font-size: 1.4em;
   line-height: 1;
-  text-shadow: 1px 1px 0 var(--ink);
 }
 @keyframes running-text {
   to {
@@ -1265,3 +1274,25 @@ details p {
   to { opacity: 1; transform: none; }
 }
 .reveal:focus-within h2 { animation: none; }
+
+.icon {
+  flex-shrink: 0;
+}
+.menu-toggle .icon {
+  margin-left: 6px;
+}
+.button > .icon,
+.preview-button .icon {
+  font-size: 18px;
+}
+.about-facts .icon {
+  margin-right: 6px;
+}
+.art-cross .icon {
+  display: block;
+  width: 0.6em;
+  height: 0.6em;
+}
+.card-bar .icon {
+  font-size: 16px;
+}

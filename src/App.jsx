@@ -1,3 +1,4 @@
+import Icon from './components/Icon'
 import { useEffect, useRef, useState } from 'react'
 import { profile } from './data/portfolio'
 import portrait from './assets/gungsatria.webp'
@@ -58,7 +59,8 @@ function App({ staticProjects = null }) {
             aria-controls="main-nav"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            {menuOpen ? 'Tutup ×' : 'Menu +'}
+            {menuOpen ? 'Tutup' : 'Menu'}{' '}
+            <Icon name={menuOpen ? 'close' : 'menu'} />
           </button>
           <nav
             id="main-nav"
@@ -80,7 +82,7 @@ function App({ staticProjects = null }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              LinkedIn <span aria-hidden="true">↗</span>
+              LinkedIn <span aria-hidden="true"><Icon name="external" /></span>
               <span className="sr-only"> (tab baru)</span>
             </a>
           </nav>
@@ -97,7 +99,7 @@ function App({ staticProjects = null }) {
           <div className="hero-copy">
             <p className="hello">
               <span className="hello-mark" aria-hidden="true">
-                ✳
+                <Icon name="asterisk" />
               </span>{' '}
               Halo, saya {profile.name}.
             </p>
@@ -113,10 +115,10 @@ function App({ staticProjects = null }) {
             </p>
             <div className="hero-actions">
               <a className="button button-yellow" href="#karya">
-                Lihat proyek <span aria-hidden="true">↓</span>
+                Lihat proyek <span aria-hidden="true"><Icon name="down" /></span>
               </a>
               <a className="text-link" href="#kontak">
-                Diskusikan kebutuhan <span aria-hidden="true">↗</span>
+                Diskusikan kebutuhan <span aria-hidden="true"><Icon name="external" /></span>
               </a>
             </div>
           </div>
@@ -125,7 +127,7 @@ function App({ staticProjects = null }) {
             <div className="identity-card">
               <div className="card-bar">
                 <span>Portofolio profesional</span>
-                <span aria-hidden="true">● ● ●</span>
+                <span aria-hidden="true"><Icon name="ellipsis" /></span>
               </div>
               <div className="portrait-stage">
                 <img
@@ -142,21 +144,21 @@ function App({ staticProjects = null }) {
                   className="portrait-note portrait-note-code"
                   aria-hidden="true"
                 >
-                  &lt;/&gt;
+                  <Icon name="code" />
                 </span>
                 <span
                   className="portrait-note portrait-note-flow"
                   aria-hidden="true"
                 >
-                  PHP ↗
+                  PHP <Icon name="external" />
                 </span>
                 <span className="art-star" aria-hidden="true">
-                  ✳
+                  <Icon name="asterisk" />
                 </span>
               </div>
               <div className="identity-caption">
                 <span>{profile.name}</span>
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true"><Icon name="external" /></span>
               </div>
             </div>
             <span className="art-sticker">
@@ -165,13 +167,13 @@ function App({ staticProjects = null }) {
               <strong>ke implementasi.</strong>
             </span>
             <span className="art-cross" aria-hidden="true">
-              +
+              <Icon name="plus" />
             </span>
           </div>
           <div className="hero-bottom">
             <span>Web & software development / Ubud, Bali</span>
             <a href="#tentang">
-              Tentang saya <span aria-hidden="true">↓</span>
+              Tentang saya <span aria-hidden="true"><Icon name="down" /></span>
             </a>
           </div>
         </section>
@@ -192,7 +194,7 @@ function App({ staticProjects = null }) {
               Gung Satria.
             </h2>
             <div className="hand-note">
-              Fokus dan latar belakang <span aria-hidden="true">↴</span>
+              Fokus dan latar belakang <span aria-hidden="true"><Icon name="turnDown" /></span>
             </div>
           </Reveal>
           <Reveal className="about-content" stagger>
@@ -214,11 +216,11 @@ function App({ staticProjects = null }) {
               rel="noopener noreferrer"
             >
               Kenali pengalaman saya di LinkedIn{' '}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true"><Icon name="external" /></span>
               <span className="sr-only"> (tab baru)</span>
             </a>
             <div className="about-facts">
-              <span>⌖ {profile.location}</span>
+              <span><Icon name="location" /> {profile.location}</span>
               <span>Software Engineering · Universitas Telkom</span>
             </div>
           </Reveal>
@@ -267,7 +269,7 @@ function App({ staticProjects = null }) {
             <h2 id="contact-title">
               Mari bahas
               <br />
-              proyek Anda<span aria-hidden="true">✳</span>
+              proyek Anda<span aria-hidden="true"><Icon name="asterisk" /></span>
             </h2>
             <div className="contact-bottom">
               <p>
@@ -283,7 +285,7 @@ function App({ staticProjects = null }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Diskusi via LinkedIn <span aria-hidden="true">↗</span>
+                  Diskusi via LinkedIn <span aria-hidden="true"><Icon name="external" /></span>
                   <span className="sr-only"> (tab baru)</span>
                 </a>
                 <a
@@ -293,25 +295,7 @@ function App({ staticProjects = null }) {
                   rel="noopener noreferrer"
                   aria-label="Instagram @gungsatriaaa0 (tab baru)"
                 >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    aria-hidden="true"
-                  >
-                    <rect x="3" y="3" width="18" height="18" rx="5" />
-                    <circle cx="12" cy="12" r="4" />
-                    <circle
-                      cx="17.5"
-                      cy="6.5"
-                      r="1"
-                      fill="currentColor"
-                      stroke="none"
-                    />
-                  </svg>
+                  <Icon name="instagram" />
                   @gungsatriaaa0
                 </a>
               </div>

@@ -1,3 +1,4 @@
+import Icon from './Icon'
 import { useState } from 'react'
 import {
   awards,
@@ -19,17 +20,7 @@ function PreviewButton({ item, onOpen }) {
       aria-label={`Lihat dokumentasi ${item.title}`}
       onClick={() => onOpen(item)}
     >
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        aria-hidden="true"
-      >
-        <path d="M14 4h6v6M20 4l-9 9M10 4H4v16h16v-6" />
-      </svg>
+      <Icon name="external" />
     </button>
   )
 }
@@ -113,7 +104,7 @@ export default function Journey() {
               <Reveal className="award" key={award.title}>
                 <div className="award-toolbar">
                   <span className="award-icon" aria-hidden="true">
-                    ✳
+                    <Icon name="asterisk" />
                   </span>
                   <PreviewButton item={award} onOpen={setPreview} />
                 </div>
@@ -126,7 +117,7 @@ export default function Journey() {
           <details className="certifications">
             <summary>
               Lihat {certifications.length} sertifikasi dan pelatihan{' '}
-              <span aria-hidden="true">+</span>
+              <span aria-hidden="true"><Icon name="chevron" /></span>
             </summary>
             <ul>
               {certifications.map((item) => (
@@ -160,7 +151,7 @@ export default function Journey() {
               />
             ) : (
               <div className="preview-unavailable">
-                <span aria-hidden="true">▧</span>
+                <span aria-hidden="true"><Icon name="image" /></span>
                 <p>Dokumentasi belum tersedia.</p>
               </div>
             )}

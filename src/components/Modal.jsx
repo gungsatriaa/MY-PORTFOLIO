@@ -1,3 +1,4 @@
+import Icon from './Icon'
 import { useEffect, useId, useRef } from 'react'
 
 export default function Modal({ open, onClose, title, children }) {
@@ -47,7 +48,7 @@ export default function Modal({ open, onClose, title, children }) {
             onClick={() => dialogRef.current.close()}
             autoFocus
           >
-            <span aria-hidden="true">×</span>
+            <span aria-hidden="true"><Icon name="close" /></span>
           </button>
         </header>
         <div className="modal-content">{children}</div>

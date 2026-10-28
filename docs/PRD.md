@@ -310,3 +310,6 @@ Penyempurnaan animasi section: heading h2 di dalam Reveal memakai clip-path bert
 
 
 Variasi animasi judul: efek teks bertahap dibatasi ke Tentang. Proyek bergeser horizontal, Pengalaman muncul dari bawah, Penghargaan masuk dengan rotasi seperti kartu ditempel, dan Kontak membesar ringan. Hero tetap. Semua entrance hanya sekali saat terlihat, memakai durasi 650–700ms dan mengikuti reduced motion. Revisi ini menggantikan penerapan efek mengetik pada seluruh h2.
+
+
+Ikon UI menggunakan Font Awesome SVG melalui komponen Icon, dengan impor ikon individual dan CSS lokal. Panah, menu/tutup, lokasi, running text, dekorasi asterisk, preview dokumen, GitHub, dan Instagram tidak lagi menggunakan glyph Unicode/emoji atau SVG manual. Semua ikon dekoratif aria-hidden dan focusable=false; label teks tombol tetap tersedia. Tidak ada CDN atau font ikon eksternal. Simbol copyright dan tanda baca tetap berupa teks. Tes prerender memastikan SVG tersedia dan glyph lama tidak tersisa.
