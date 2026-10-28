@@ -1,6 +1,6 @@
 # SEO dan copywriting portofolio
 
-Pembaruan 28 Oktober 2026. Status: selesai secara lokal; domain dan deployment produksi belum tersedia. Hosting yang direncanakan: Vercel.
+Pembaruan 28 Oktober 2026. Status: domain produksi https://gungsatria.com dikonfigurasi di .env.production; hosting VPS aaPanel. Deployment server belum diverifikasi.
 
 ## Posisi dan pesan utama
 
@@ -25,19 +25,13 @@ CTA utama: Lihat proyek → Diskusikan kebutuhan → Diskusi via LinkedIn. Insta
 - Render browser tetap memakai createRoot dan membangun interaksi dari data yang sama; ini prerender statis dengan client rendering, bukan server runtime atau hydration framework.
 - Canonical, URL sosial absolut, sitemap, dan robots merujuk domain produksi saat tersedia. Preview Vercel memakai noindex,follow.
 
-## Konfigurasi Vercel
+## Konfigurasi VPS aaPanel
 
-Gunakan preset Vite, Build Command `npm run build`, dan Output Directory `dist`. Tidak perlu server Node untuk melayani hasil produksi.
+Salin `.env.example` ke `.env.production` sekali pada VPS; file environment lokal diabaikan Git. Domain utama `https://gungsatria.com` disimpan melalui `SITE_URL` di `.env.production`, lalu dibaca saat build untuk canonical, JSON-LD, Open Graph, robots, dan sitemap. Ini nilai publik; tidak perlu environment runtime. Untuk mengganti domain, ubah nilai tersebut dan build ulang. `.env.local` maupun environment shell memiliki prioritas lebih tinggi, jadi jangan menyimpan domain lama di sana.
 
-Prioritas domain:
+Jalankan `./deploy.sh` di checkout VPS untuk pull main, install dependency, lint, tes, dan build. Arahkan document root website aaPanel ke folder `dist` pada checkout tersebut. Aktifkan SSL dan redirect HTTPS, lalu arahkan www ke domain utama jika dipakai. Tidak perlu server Node/PM2. Instruksi lengkap terdapat pada bagian deployment README.
 
-1. `SITE_URL`: URL root lengkap, seperti domain pribadi yang benar-benar dimiliki, dengan protokol https.
-2. `VERCEL_PROJECT_PRODUCTION_URL`: domain produksi yang disediakan Vercel; bukan URL deployment acak. Pastikan akses system environment variables aktif.
-3. Jika keduanya kosong, build tetap berjalan dengan metadata identitas dan prerender, tanpa canonical/sitemap/domain rekaan. robots.txt tetap dihasilkan.
-
-Isi SITE_URL melalui environment variable produksi Vercel atau `.env.local` saat menguji lokal. Jangan mengisi domain contoh ke deployment sebenarnya. Jika memakai custom domain baru, ubah SITE_URL dan build ulang.
-
-Untuk VERCEL_ENV=preview, metadata memakai noindex,follow dan build tidak membuat sitemap. robots mengizinkan crawl supaya noindex dapat dibaca. Pengaturan akses/proteksi preview dari Vercel tetap dikelola pada akun pemilik.
+Resolver masih mendukung fallback domain Vercel untuk kompatibilitas, tetapi deployment aaPanel menggunakan SITE_URL eksplisit. Jangan mengatur VERCEL_ENV=preview pada VPS produksi karena mode itu sengaja memberi noindex dan tidak menghasilkan sitemap.
 
 ## Pemeriksaan yang dilakukan
 
@@ -47,7 +41,7 @@ Untuk VERCEL_ENV=preview, metadata memakai noindex,follow dan build tidak membua
 - Build lokal tanpa domain: tidak membuat canonical/sitemap rekaan.
 - Browser produksi: galeri muncul tanpa scroll; tampilan hero dan metadata diperiksa. Hasil viewport dicatat di README.
 
-Belum dilakukan: deployment Vercel, Rich Results Test pada URL publik, Search Console, Lighthouse produksi, dan pemantauan Core Web Vitals/traffic. Tidak menyatakan rich result, peringkat, atau trafik terjamin.
+Belum dilakukan: verifikasi deployment VPS aaPanel, Rich Results Test pada URL publik, Search Console, Lighthouse produksi, dan pemantauan Core Web Vitals/traffic. Tidak menyatakan rich result, peringkat, atau trafik terjamin.
 
 ## Setelah domain aktif
 

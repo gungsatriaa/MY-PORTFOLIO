@@ -162,3 +162,45 @@ Verifikasi komposisi terbaru: crop tidak memperlihatkan celana, desktop 1280×72
 
 
 Pembaruan fokus profesional (28 Oktober 2026): hero dan Tentang menonjolkan Web Developer dan Software Developer. PHP, Laravel, dan Flutter ditambahkan ke keahlian; AI/n8n tetap menjadi keahlian pendukung dan riwayat penghargaan, bukan fokus utama. Running text, label hero, CTA kontak, metadata SEO, serta preview sosial mengikuti fokus baru ini. Ketentuan ini menggantikan copy fokus otomasi pada revisi sebelumnya.
+
+
+## Deploy VPS aaPanel — gungsatria.com
+
+Panduan ini menggantikan rencana hosting Vercel pada catatan sebelumnya. Website berupa file statis; Nginx/Apache aaPanel melayani folder `dist`. Node/npm hanya dipakai untuk build, tanpa PM2, `npm run dev`, atau `vite preview` sebagai server produksi.
+
+Buat konfigurasi lokal sekali di VPS (file environment tidak disertakan di Git):
+
+```bash
+cp .env.example .env.production
+```
+
+Domain SEO pada `.env.production`:
+
+```dotenv
+SITE_URL=https://gungsatria.com
+```
+
+Nilai ini publik, bukan secret. Vite dan prerender membacanya saat `npm run build`; mengganti domain perlu build ulang. `.env.local` atau environment shell dapat menimpa nilai ini, jadi pastikan tidak ada domain lama pada VPS. Tidak perlu database, API key, atau environment runtime untuk fitur saat ini.
+
+Setup sekali:
+
+1. Arahkan DNS A `gungsatria.com` ke IPv4 VPS. Jika memakai AAAA, pastikan IPv6 VPS benar. Untuk `www`, tambahkan record yang sesuai lalu redirect ke domain utama.
+2. Di aaPanel, buat website statis untuk domain tersebut dan aktifkan sertifikat SSL serta redirect HTTPS. Atur homepage `index.html`.
+3. Pasang Git dan Node/npm yang sesuai Vite: Node 22.12+ atau Node 20.19+. Pastikan tersedia di terminal pengguna yang menjalankan deploy.
+4. Clone repository pada folder khusus source di VPS, misalnya `/www/projects/my-portfolio`. SSH key GitHub perlu tersedia pada VPS jika memakai URL SSH; key di laptop tidak otomatis tersedia di VPS.
+5. Atur document root aaPanel ke `/www/projects/my-portfolio/dist` (sesuaikan dengan lokasi clone), bukan folder source. Jalankan build pertama agar folder tersebut tersedia.
+
+Setelah seluruh perubahan deployment di-commit dan di-push dari laptop, jalankan di terminal VPS:
+
+```bash
+cd /www/projects/my-portfolio
+./deploy.sh
+```
+
+Script menjalankan `git pull --ff-only origin main`, `npm ci --include=dev`, lint, tes, dan build. Hasilnya langsung dilayani dari document root `dist`; tidak ada upload ke Vercel atau restart proses Node. Script hanya menerima branch `main` dan working tree bersih. Script tidak membuat commit/push/stash dan tidak menghapus perubahan source lokal.
+
+Setelah deploy, cek `https://gungsatria.com`, `/robots.txt`, `/sitemap.xml`, dan `/og-image.png`. Navigasi portfolio tetap di satu halaman, sehingga tidak membutuhkan rewrite React Router. File environment berada di folder source, bukan folder publik `dist`.
+
+Validasi lokal: sintaks Bash, 11 tes, lint, build, canonical/social image/sitemap untuk gungsatria.com lolos. DNS, SSL, permission web server, dan konfigurasi aaPanel belum diperiksa di VPS.
+
+Referensi: [Vite static deployment](https://vite.dev/guide/static-deploy), [Vite environment](https://vite.dev/guide/env-and-mode), [aaPanel website](https://www.aapanel.com/docs/SubaaPanel/Website.html).
