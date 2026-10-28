@@ -38,13 +38,20 @@ export default function Projects() {
         {visibleProjects.map((project) => (
           <Reveal as="article" className="project-card" key={project.id}>
             {project.image && (
-              <div className={`project-art bg-${project.background}`}>
+              <button
+                type="button"
+                className={`project-art bg-${project.background}`}
+                aria-haspopup="dialog"
+                aria-label={`Lihat gambar ${project.title}`}
+                onClick={() => setPreview(project)}
+              >
                 <LazyImage
+                  as="span"
                   key={project.image}
                   src={project.image}
                   alt={project.imageAlt}
                 />
-              </div>
+              </button>
             )}
             <div className="project-copy">
               <h3>{project.title}</h3>
@@ -61,20 +68,8 @@ export default function Projects() {
                 ))}
               </ul>
               <p>{project.description}</p>
-              {(project.image || project.website || project.github) && (
+              {(project.website || project.github) && (
                 <div className="project-actions">
-                  {project.image && (
-                    <button
-                      type="button"
-                      className="button project-link"
-                      aria-haspopup="dialog"
-                      aria-label={`Lihat gambar ${project.title}`}
-                      onClick={() => setPreview(project)}
-                    >
-                      <Icon name="image" />
-                      Lihat gambar
-                    </button>
-                  )}
                   {project.website && (
                     <a
                       className="button button-yellow project-link"

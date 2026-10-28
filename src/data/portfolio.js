@@ -60,19 +60,19 @@ export const education = [
 
 export const awards = [
   {
-    image: null,
+    image: '/images/apjii.webp',
     title: 'Beasiswa APJII Bali',
     issuer: 'Asosiasi Penyelenggara Jasa Internet Indonesia',
     date: 'Mei 2026',
   },
   {
-    image: null,
+    image: '/images/osii-week.webp',
     title: 'Juara 1 AI Application Competition OSII Week 2025',
     issuer: 'Universitas Katolik Darma Cendika',
     date: 'November 2025',
   },
   {
-    image: null,
+    image: '/images/smk-ai.webp',
     title: 'Juara 2 SMK AI Innovation Challenge',
     issuer: 'Haraka Communication bersama Direktorat SMK',
     date: null,
@@ -81,42 +81,42 @@ export const awards = [
 
 export const certifications = [
   {
-    image: null,
+    image: '/images/public-speaking.webp',
     title: 'National Basic Public Speaking Learning',
     issuer: 'Speak-Up Academy Hub',
     issued: 'September 2026',
     expires: null,
   },
   {
-    image: null,
+    image: '/images/e-learning.webp',
     title: 'Academic Achiever Student 2026',
     issuer: 'SMK Negeri 1 Mas Ubud',
     issued: 'Maret 2026',
     expires: null,
   },
   {
-    image: null,
+    image: '/images/prokope.webp',
     title: 'Prokope Entrepreneurship Track',
     issuer: 'Prokope (Agency & Akademy)',
     issued: 'Maret 2026',
     expires: null,
   },
   {
-    image: null,
+    image: '/images/gamelab-html.webp',
     title: 'Gamelab Certificate HTML & CSS',
     issuer: 'Gamelab Indonesia',
     issued: 'April 2024',
     expires: 'April 2027',
   },
   {
-    image: null,
+    image: '/images/gamelab-javascript.webp',
     title: 'Gamelab Certificate JavaScript & jQuery',
     issuer: 'Gamelab Indonesia',
     issued: 'November 2024',
     expires: 'November 2027',
   },
   {
-    image: null,
+    image: '/images/gamelab-bootstrap.webp',
     title: 'Gamelabs Certificate Bootstrap & Sass',
     issuer: 'Gamelab Indonesia',
     issued: 'Agustus 2024',
@@ -130,7 +130,7 @@ export const categories = ['Semua', 'Website']
 export const projects = [
   {
     id: 'eskul-stikmas',
-    techStack: [{ label: 'PHP Native', icon: 'php' }],
+    techStack: [{ label: 'PHP', icon: 'php' }],
     image: '/images/eskul.webp',
     imageAlt: 'Website ekstrakurikuler SMKN 1 Mas Ubud',
     title: 'Website SMKN 1 Mas Ubud',
@@ -143,7 +143,7 @@ export const projects = [
   },
   {
     id: 'hotelinaja',
-    techStack: [{ label: 'PHP Native', icon: 'php' }],
+    techStack: [{ label: 'PHP', icon: 'php' }],
     image: '/images/hotelin.webp',
     imageAlt: 'Solusi digital untuk Hotel Jaman Sekarang',
     title: 'HotelinAja',

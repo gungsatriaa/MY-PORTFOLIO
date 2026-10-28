@@ -1,13 +1,13 @@
 import { useState } from 'react'
 
-export default function LazyImage({ src, alt }) {
+export default function LazyImage({ src, alt, as: Tag = 'div' }) {
   const [status, setStatus] = useState(() =>
     typeof window === 'undefined' ? 'loaded' : 'loading',
   )
   return (
-    <div className={`image-frame ${status === 'loading' ? 'skeleton' : ''}`}>
+    <Tag className={`image-frame ${status === 'loading' ? 'skeleton' : ''}`}>
       {status === 'error' ? (
-        <p className="image-error">Gambar belum dapat dimuat.</p>
+        <span className="image-error">Gambar belum dapat dimuat.</span>
       ) : (
         <img
           src={src}
@@ -21,6 +21,6 @@ export default function LazyImage({ src, alt }) {
           className={status === 'loaded' ? 'image-loaded' : 'image-loading'}
         />
       )}
-    </div>
+    </Tag>
   )
 }

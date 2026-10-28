@@ -319,3 +319,6 @@ Galeri proyek terbaru: foto memenuhi area kartu berasio 2:1, tanpa padding latar
 
 
 Tech stack proyek: Eskul dan HotelinAja menampilkan badge PHP Native; ARTASWAHA menampilkan Laravel dan React.js. Badge memakai logo Font Awesome Brands yang diimpor individual, label teks, border hitam, shadow 2px, serta warna lembut per teknologi. Badge berada di bawah judul dan membungkus baris pada layar kecil. Kartu memakai layout flex agar tombol aksi sejajar di bagian bawah, sementara tombol Lihat gambar dan modal dipertahankan. Tidak menambah dependency.
+
+
+Interaksi gambar proyek: tombol Lihat gambar terpisah dihapus. Area gambar menjadi native button dengan label aksesibel dan aria-haspopup=dialog; klik, Enter, dan Space membuka Modal yang sama. Cursor zoom-in dan focus ring di dalam border menandai interaksi. LazyImage memakai span pada area tombol agar markup valid, dengan skeleton/error tetap tersedia.
